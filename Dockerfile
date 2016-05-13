@@ -2,8 +2,9 @@
 # File managed by puppet, don't edit
 ##################
 
-FROM elasticsearch:1.7.2
+FROM elasticsearch:2.3.2
 
 RUN cd /usr/share/elasticsearch \
-	&& bin/plugin install elasticsearch/elasticsearch-mapper-attachments/2.7.1
+	&& bin/plugin install mapper-attachments \
+	&& bin/plugin install delete-by-query
   
