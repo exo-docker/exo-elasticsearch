@@ -20,3 +20,7 @@ docker run -d --name exo_elasticsearch -v <my data path>:/usr/share/elasticsearc
 ```
 
 WARNING: Don't expose publicly your elasticsearch without securing it
+
+## eXo Platform instance configuration
+
+The way to configure you eXo Platform instance is explained in details on this [eXo documentation section](https://www.exoplatform.com/docs/public/topic/PLF44/PLFAdminGuide.Configuration.ElasticSearch.html)
