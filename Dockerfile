@@ -1,11 +1,6 @@
-##################
-# File managed by puppet, don't edit
-##################
+FROM docker.elastic.co/elasticsearch/elasticsearch:5.3.0
 
-FROM elasticsearch:2.3.2
+ENV xpack.security.enabled=false
 
 RUN cd /usr/share/elasticsearch \
-	&& bin/plugin install mapper-attachments \
-	&& bin/plugin install delete-by-query \
-	&& bin/plugin install cloud-aws
-  
+	&& bin/elasticsearch-plugin install -b -s ingest-attachment

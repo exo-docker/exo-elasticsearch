@@ -6,13 +6,18 @@ It is based on the official ElasticSearch image.
 
 ## Compatibility Matrix
 
-| eXo Platform version | Image Version
+| eXo Platform version | Image Version | Elasticsearch version
 |:-:|:-:|
-| >= 4.4.0 | 0.3
+| >= 4.4.0 | 0.3 | 2.2
+| >= 5.5.0 | 1.0 | 5.3
 
 ## Usage
 
-[This image can be use as the official ElasticSearch image](https://hub.docker.com/_/elasticsearch/)
+This image can be use as the official ElasticSearch image.
+
+see https://hub.docker.com/_/elasticsearch/ for version 0.3 and lower.
+
+see https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html for 1.0 and greater
 
 ## Basic usage
 ```
