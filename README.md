@@ -7,7 +7,7 @@ It is based on the official ElasticSearch image.
 ## Compatibility Matrix
 
 | eXo Platform version | Image Version | Elasticsearch version
-|:-:|:-:|
+|- |- |-
 | >= 4.4.0 | 0.3 | 2.2
 | >= 5.0.0 | 1.0 | 5.3
 
