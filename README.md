@@ -9,7 +9,7 @@ It is based on the official ElasticSearch image.
 | eXo Platform version | Image Version | Elasticsearch version
 |- |- |-
 | >= 4.4.0 | 0.3 | 2.2
-| >= 5.0.0 | 1.0.2 | 5.3.2
+| >= 5.0.0 | 1.0.3 | 5.3.2
 
 ## Usage
 
@@ -21,7 +21,7 @@ see https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html 
 
 ## Basic usage
 ```
-docker run -d --name exo_elasticsearch -v <my data path>:/usr/share/elasticsearch/data -p 9200:9200 exoplatform/elasticsearch
+docker run -d --name exo_elasticsearch -e ES_JAVA_OPTS="-Xms8g -Xmx8g" -v <my data path>:/usr/share/elasticsearch/data -p 9200:9200 exoplatform/elasticsearch
 ```
 
 WARNING: Don't expose publicly your elasticsearch without securing it
