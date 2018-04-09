@@ -2,7 +2,7 @@
 # File managed by puppet, don't edit
 ##################
 
-FROM elasticsearch:2.3.2
+FROM elasticsearch:2.3.5
 
 RUN cd /usr/share/elasticsearch \
 	&& bin/plugin install mapper-attachments \
