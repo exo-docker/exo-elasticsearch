@@ -14,18 +14,6 @@ COPY jvm.options /usr/share/elasticsearch/config/
 
 EXPOSE 9200 9300
 
-
-RUN set -ex \
-	&& for path in \
-		./data \
-		./logs \
-		./config \
-		./config/scripts \
-	; do \
-		mkdir -p "$path"; \
-		chown -R elasticsearch:elasticsearch "$path"; \
-	done
-	
 RUN mkdir -p /usr/share/elasticsearch/data && \
     chown -R elasticsearch:${ES_GROUP} /usr/share/elasticsearch/data
     
