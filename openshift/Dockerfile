@@ -33,5 +33,5 @@ RUN chmod -R og+w /usr/share/elasticsearch
 
 USER 1000
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/share/elasticsearch/config/docker-entrypoint.sh"]
 CMD ["elasticsearch"]
