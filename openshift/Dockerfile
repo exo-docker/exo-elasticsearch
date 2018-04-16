@@ -30,9 +30,9 @@ RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s ingest-attac
     /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s mapper-attachments
     
 RUN chmod -R og+w /usr/share/elasticsearch && \
-    chmod 755 /usr/share/elasticsearch/config/docker-entrypoint.sh
+    chmod 755 /docker-entrypoint.sh
 
 USER 1000
 
-ENTRYPOINT ["/usr/share/elasticsearch/config/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["elasticsearch"]
