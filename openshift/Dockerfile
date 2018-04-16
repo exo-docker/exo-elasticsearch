@@ -8,8 +8,8 @@ ENV ES_GROUP elasticsearch
 USER root
 
 WORKDIR /usr/share/elasticsearch
-COPY openshift/config ./config
-COPY openshift/docker-entrypoint.sh /
+COPY config ./config
+COPY docker-entrypoint.sh /
 COPY jvm.options /usr/share/elasticsearch/config/
 
 EXPOSE 9200 9300
