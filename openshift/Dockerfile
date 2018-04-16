@@ -4,12 +4,12 @@ ENV ELASTICSEARCH_MAJOR 5.6
 ENV ELASTICSEARCH_VERSION 5.6.3
 ENV xpack.security.enabled=false
 ENV PATH /usr/share/elasticsearch/bin:$PATH
-ENV ES_GROUP elasticsearch
+ENV ES_GROUP 0
 USER root
 
 WORKDIR /usr/share/elasticsearch
 COPY config ./config
-COPY docker-entrypoint.sh ./config
+COPY docker-entrypoint.sh /
 COPY jvm.options /usr/share/elasticsearch/config/
 
 EXPOSE 9200 9300
@@ -29,7 +29,8 @@ RUN mkdir -p /usr/share/elasticsearch/config/scripts && \
 RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s ingest-attachment && \
     /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s mapper-attachments
     
-RUN chmod -R og+w /usr/share/elasticsearch 
+RUN chmod -R og+w /usr/share/elasticsearch && \
+    chmod 755 /usr/share/elasticsearch/config/docker-entrypoint.sh
 
 USER 1000
 
