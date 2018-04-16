@@ -9,7 +9,7 @@ USER root
 
 WORKDIR /usr/share/elasticsearch
 COPY config ./config
-COPY docker-entrypoint.sh /
+COPY docker-entrypoint.sh ./config
 COPY jvm.options /usr/share/elasticsearch/config/
 
 EXPOSE 9200 9300
@@ -29,7 +29,7 @@ RUN mkdir -p /usr/share/elasticsearch/config/scripts && \
 RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s ingest-attachment && \
     /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s mapper-attachments
     
-RUN chmod -R og+w /usr/share/elasticsearch
+RUN chmod -R og+w /usr/share/elasticsearch 
 
 USER 1000
 
