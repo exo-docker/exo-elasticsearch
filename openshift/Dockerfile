@@ -14,17 +14,8 @@ COPY jvm.options /usr/share/elasticsearch/config/
 
 EXPOSE 9200 9300
 
-RUN mkdir -p /usr/share/elasticsearch/data && \
-    chown -R elasticsearch:${ES_GROUP} /usr/share/elasticsearch/data
-    
-RUN mkdir -p /usr/share/elasticsearch/logs && \
-    chown -R elasticsearch:${ES_GROUP} /usr/share/elasticsearch/logs
-    
-RUN mkdir -p /usr/share/elasticsearch/config && \
-    chown -R elasticsearch:${ES_GROUP} /usr/share/elasticsearch/config
-    
-RUN mkdir -p /usr/share/elasticsearch/config/scripts && \
-    chown -R elasticsearch:${ES_GROUP} /usr/share/elasticsearch/config/scripts
+RUN chgrp -R 0 /usr/share/elasticsearch/ && \
+    chmod -R g=u /usr/share/elasticsearch/
 
 RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s ingest-attachment && \
     /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s mapper-attachments
@@ -34,5 +25,5 @@ RUN chmod -R og+w /usr/share/elasticsearch && \
 
 USER 1000
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["elasticsearch"]
+#ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["/usr/share/elasticsearch/bin/elasticsearch"]
