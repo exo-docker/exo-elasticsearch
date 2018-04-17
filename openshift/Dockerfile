@@ -1,4 +1,4 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch-oss:5.6.3
+FROM docker.elastic.co/elasticsearch/elasticsearch:5.6.3
 
 ENV ELASTICSEARCH_MAJOR 5.6
 ENV ELASTICSEARCH_VERSION 5.6.3
