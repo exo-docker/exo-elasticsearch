@@ -5,7 +5,6 @@ ENV ELASTICSEARCH_VERSION 5.6.3
 ENV xpack.security.enabled=false
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 ENV ES_GROUP 0
-ES_JAVA_OPTS=-Xms512m -Xmx512m
 USER root
 
 WORKDIR /usr/share/elasticsearch
