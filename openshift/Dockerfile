@@ -22,7 +22,7 @@ RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s ingest-attac
     
 #RUN chmod -R og+w /usr/share/elasticsearch && \
 #    chmod 755 /docker-entrypoint.sh
-
+RUN sysctl -w vm.max_map_count=261244
 USER 1000
 
 #ENTRYPOINT ["/docker-entrypoint.sh"]
