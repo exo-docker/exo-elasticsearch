@@ -20,8 +20,8 @@ RUN chgrp -R 0 /usr/share/elasticsearch/ && \
 RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s ingest-attachment && \
     /usr/share/elasticsearch/bin/elasticsearch-plugin install -b -s mapper-attachments
     
-RUN chmod -R og+w /usr/share/elasticsearch && \
-    chmod 755 /docker-entrypoint.sh
+#RUN chmod -R og+w /usr/share/elasticsearch && \
+#    chmod 755 /docker-entrypoint.sh
 
 USER 1000
 
