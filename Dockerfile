@@ -1,4 +1,10 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:5.6.9
+# Dockerizing elasticsearch images for eXo platform
+# 
+# Build:    docker build -t exoplatform/elasticsearch .
+#
+# Run:      docker run -ti exoplatform/elasticsearch
+
+FROM docker.elastic.co/elasticsearch/elasticsearch:5.6.11
 
 ENV xpack.security.enabled=false
 
