@@ -8,6 +8,7 @@ It is based on the official ElasticSearch image.
 
 | eXo Platform version | Image Version | Elasticsearch version |
 | -------------------- | ------------- | --------------------- |
+| >= 5.3.0             | 1.2.2         | 5.6.16                |
 | >= 5.2.0             | 1.2.1         | 5.6.11                |
 | >= 5.1.0             | 1.2.0         | 5.6.9                 |
 | >= 5.0.0             | 1.1.0         | 5.6.3                 |

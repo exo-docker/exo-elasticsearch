@@ -3,7 +3,7 @@
 # Build:    docker build -t exoplatform/elasticsearch .
 #
 # Run:      docker run -ti exoplatform/elasticsearch
-FROM docker.elastic.co/elasticsearch/elasticsearch:5.6.11
+FROM docker.elastic.co/elasticsearch/elasticsearch:5.6.16
 
 # Enforce underlying system package update
 USER root
