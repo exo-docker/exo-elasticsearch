@@ -1,6 +1,6 @@
 # Elasticsearch for eXo platform
 
-This is a prepackaged image of ElasticSearch ready to use with eXo Platform version >= 4.4.0.
+This is a prepackaged image of ElasticSearch ready to use with eXo Platform version >= 6.2.
 
 It is based on the official ElasticSearch image.
 
@@ -8,6 +8,7 @@ It is based on the official ElasticSearch image.
 
 | eXo Platform version | Image Version | Elasticsearch version |
 | -------------------- | ------------- | --------------------- |
+| >= 6.2.0             | 1.3.0         | 7.13.2                |
 | >= 5.3.0             | 1.2.2         | 5.6.16                |
 | >= 5.2.0             | 1.2.1         | 5.6.11                |
 | >= 5.1.0             | 1.2.0         | 5.6.9                 |
@@ -16,11 +17,11 @@ It is based on the official ElasticSearch image.
 
 ## Usage
 
-This image can be use as the official ElasticSearch image.
+This image usage is the same as the official ElasticSearch image.
 
-see https://hub.docker.com/_/elasticsearch/ for version 0.3 and lower.
+see https://hub.docker.com/_/elasticsearch/ 
 
-see https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html for 1.0 and greater
+see https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html for the related Elasticsearch version
 
 ## Basic usage
 
@@ -32,4 +33,4 @@ WARNING: Don't expose publicly your elasticsearch without securing it
 
 ## eXo Platform instance configuration
 
-The way to configure you eXo Platform instance is explained in details on this [eXo documentation section](https://www.exoplatform.com/docs/public/topic/PLF44/PLFAdminGuide.Configuration.ElasticSearch.html)
+The way to configure you eXo Platform instance is explained in details on this [eXo documentation section](https://docs.exoplatform.org/en/latest/Configuration.html#elasticsearch-configuration)

@@ -1,0 +1,10 @@
+# Cluster initialisation
+node.name: exo_es-1
+cluster.initial_master_nodes:
+          - exo_es-1
+
+# Network seetings : listen on interfaces other than loopback
+network.host: _site_
+
+# Security configuration
+xpack.security.enabled: false
