@@ -35,6 +35,9 @@ WARNING: Don't expose publicly your elasticsearch without securing it
 
 This is a very basic docker compose file of a single node cluster, for tests only, without security, exposing port 9200:
 
+WARNING: Don't expose publicly your elasticsearch without securing it
+
+```
 version: "3.3"
 services:
   es:
@@ -53,6 +56,7 @@ services:
       - ./search:/usr/share/elasticsearch/data:rw
     ports:
       - "9200:9200"
+```
 
 ## eXo Platform instance configuration
 
