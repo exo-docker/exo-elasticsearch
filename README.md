@@ -33,7 +33,7 @@ WARNING: Don't expose publicly your elasticsearch without securing it
 
 ## Basic docker compose usage
 
-This is a very basic docker compose file of a single node cluster, for tests only, without security, exposing port 9200:
+This is a very basic docker compose file of a single node cluster, for tests only, without security, exposing port 9200.
 
 WARNING: Don't expose publicly your elasticsearch without securing it
 
