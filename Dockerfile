@@ -15,4 +15,3 @@ ENV xpack.security.enabled=false
 RUN cd /usr/share/elasticsearch \
     && bin/elasticsearch-plugin install -b -s ingest-attachment
 COPY jvm.options /usr/share/elasticsearch/config/
-COPY elasticsearch.yml /usr/share/elasticsearch/config/
