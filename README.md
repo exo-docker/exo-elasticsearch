@@ -1,6 +1,6 @@
 # Elasticsearch for eXo platform
 
-This is a prepackaged image of ElasticSearch ready to use with eXo Platform version >= 6.2.
+This is a prepackaged image of ElasticSearch ready to use with eXo Platform version >= 4.4.
 
 It is based on the official ElasticSearch image.
 
@@ -8,7 +8,7 @@ It is based on the official ElasticSearch image.
 
 | eXo Platform version | Image Version | Elasticsearch version |
 | -------------------- | ------------- | --------------------- |
-| >= 6.2.0             | 1.3.0         | 7.13.2                |
+| >= 6.2.0             | 2.0.0         | 7.13.2                |
 | >= 5.3.0             | 1.2.2         | 5.6.16                |
 | >= 5.2.0             | 1.2.1         | 5.6.11                |
 | >= 5.1.0             | 1.2.0         | 5.6.9                 |
@@ -30,6 +30,29 @@ docker run -d --name exo_elasticsearch -e ES_JAVA_OPTS="-Xms8g -Xmx8g" -v <my da
 ```
 
 WARNING: Don't expose publicly your elasticsearch without securing it
+
+## Basic docker compose usage
+
+This is a very basic docker compose file of a single node cluster, for tests only, without security, exposing port 9200:
+
+version: "3.3"
+services:
+  es:
+    image: exoplatform/elasticsearch:2.0.0
+    container_name: es
+    hostname: es
+    restart: on-failure
+    environment:
+      - node.name=es-1
+      - cluster.name=es
+      - cluster.initial_master_nodes=es-1
+      - ES_JAVA_OPTS=-Xms8g -Xmx8g
+      - xpack.security.enabled=false
+      - network.host=_site_
+    volumes:
+      - ./search:/usr/share/elasticsearch/data:rw
+    ports:
+      - "9200:9200"
 
 ## eXo Platform instance configuration
 
