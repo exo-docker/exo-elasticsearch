@@ -11,7 +11,6 @@ RUN yum update -y && yum clean all -y
 USER elasticsearch
 
 # Configure Elasticsearch for eXo Platform
-ENV xpack.security.enabled=false
 RUN cd /usr/share/elasticsearch \
     && bin/elasticsearch-plugin install -b -s ingest-attachment
 COPY jvm.options /usr/share/elasticsearch/config/
