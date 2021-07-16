@@ -10,7 +10,7 @@ USER root
 RUN yum update -y && yum clean all -y
 USER elasticsearch
 
-# Configure Elasticsearch for eXo Platform 
+# Configure Elasticsearch for eXo Platform
 RUN cd /usr/share/elasticsearch \
     && bin/elasticsearch-plugin install -b -s ingest-attachment
 COPY jvm.options /usr/share/elasticsearch/config/
