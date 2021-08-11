@@ -14,3 +14,4 @@ USER elasticsearch
 RUN cd /usr/share/elasticsearch \
     && bin/elasticsearch-plugin install -b -s ingest-attachment
 COPY jvm.options /usr/share/elasticsearch/config/
+HEALTHCHECK CMD curl --fail localhost:9200/_cluster/health || exit 1
