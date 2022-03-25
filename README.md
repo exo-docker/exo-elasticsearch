@@ -8,6 +8,7 @@ It is based on the official ElasticSearch image.
 
 | eXo Platform version | Image Version | Elasticsearch version |
 | -------------------- | ------------- | --------------------- |
+| >= 6.3.0             | 2.0.3         | 8.1.1                 |
 | >= 6.2.0             | 2.0.2         | 7.13.2                |
 | >= 5.3.0             | 1.2.3         | 5.6.16                |
 | >= 5.2.0             | 1.2.1         | 5.6.11                |
@@ -41,17 +42,16 @@ WARNING: Don't expose publicly your elasticsearch without securing it
 version: "3.3"
 services:
   es:
-    image: exoplatform/elasticsearch:2.0.0
+    image: exoplatform/elasticsearch:2.0.3
     container_name: es
     hostname: es
     restart: on-failure
     environment:
-      - node.name=es-1
-      - cluster.name=es
-      - cluster.initial_master_nodes=es-1
-      - ES_JAVA_OPTS=-Xms8g -Xmx8g
+      - discovery.type=single-node
       - xpack.security.enabled=false
-      - network.host=_site_
+      - xpack.security.http.ssl.enabled=false
+      - ingest.geoip.downloader.enabled=false
+      - ES_JAVA_OPTS=-Xms8g -Xmx8g
     volumes:
       - ./search:/usr/share/elasticsearch/data:rw
     ports:
