@@ -27,7 +27,7 @@ see https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html 
 ## Basic usage
 
 ```bash
-docker run -d --name exo_elasticsearch -e ES_JAVA_OPTS="-Xms8g -Xmx8g" -v <my data path>:/usr/share/elasticsearch/data -p 9200:9200 exoplatform/elasticsearch
+docker run -d --name exo_elasticsearch -e ES_JAVA_OPTS="-Xms8g -Xmx8g" -e node.name=es-1 -e cluster.name=es -e cluster.initial_master_nodes=es-1 -e xpack.security.enabled=false -e network.host=_site_ -v <my data path>:/usr/share/elasticsearch/data -p 9200:9200 exoplatform/elasticsearch
 ```
 
 WARNING: Don't expose publicly your elasticsearch without securing it
@@ -42,7 +42,7 @@ WARNING: Don't expose publicly your elasticsearch without securing it
 version: "3.3"
 services:
   es:
-    image: exoplatform/elasticsearch:2.0.0
+    image: exoplatform/elasticsearch:latest
     container_name: es
     hostname: es
     restart: on-failure

@@ -3,11 +3,11 @@
 # Build:    docker build -t exoplatform/elasticsearch .
 #
 # Run:      docker run -ti exoplatform/elasticsearch
-FROM docker.elastic.co/elasticsearch/elasticsearch:7.13.2
+FROM docker.elastic.co/elasticsearch/elasticsearch:8.1.1
 
 # Enforce underlying system package update
 USER root
-RUN yum update -y && yum clean all -y
+RUN apt-get update -y && apt-get clean all -y
 USER elasticsearch
 
 # Configure Elasticsearch for eXo Platform
